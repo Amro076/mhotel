@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+
+<div class="container text-center">
+    <div class="title">
+    <br>
+    <h1><small>Bienvenue dans le</small> M HOTEL</h1><br><br>
+    </div>
+    <div><img src="{{asset('image/accueil-photo.jpg ' )}} " width="700" alt=""></div>   
+</div>
+
+<section>
+        <div class="row">
+		{% for item in chambres %}
+			<div class="col-md-4"><br><br>
+				<div class="card" style="width: 18rem;">
+					<img src="{{ item.photo }}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">{{ item.titre }}</h5>
+						<p class="card-text">{{ item.descriptioncourte|raw }}</p>
+                        <p></p>
+						<p class="card-text">{{ item.prixJour / 100|number_format(2) }}€</p> 
+					
+					</div>
+                    <a class="btn btn-primary" href="{{ path('app_show', {id: item.id})}}">pour en savoir plus</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+    </section>
+
+
+{% endblock %}

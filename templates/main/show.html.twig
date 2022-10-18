@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+<section class="col-md-4 mx-auto text-center border border-dark mb-3 p-3 mt-3 mr-1>
+        
+			
+	<div class="card-body ">
+		<h5 class="card-title">{{ item.titre }}</h5><br>
+					
+					
+			<div class="card text-center" >
+                <div>
+					<img src="{{ item.photo }}" >
+                </div>
+				<p class="card-text">{{ item.descriptioncourte|raw }}</p>
+                <p></p>
+                <div><p>{{ item.descriptionlongue}}</p></div>
+                        
+				<p class="card-text">{{ item.prixJour / 100|number_format(2) }}€</p> 
+				<a class="btn btn-primary" href="#">Réservez maintenant</a>
+						
+			</div>
+		</div>
+	
+    </section>
+
+
+
+
+{% endblock %}
