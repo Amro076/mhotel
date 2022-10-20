@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+
+ <h1 class="text-center text-dark">Réserver</h1>
+<section class="d-flex justify-content-center">
+	<div class="card border bg-dark mt-5 mb-3  m-2" style="width: 42rem;">
+		
+			<h3 class="card-header text-center ">{{ cham.titre }}</h3>
+			<img src="{{ asset(cham.photo) }}"  height="400px" alt="">
+			<div class="card-body">
+				<p class="card-text ">{{ cham.descriptionlongue }}</p>
+				<p class="card-text text-end fw-bold ">{{ cham.prixJour / 100|number_format(2)  }}€ / j</p>
+			</div>
+	
+    </div>
+
+
+    <div class="card border bg-dark mt-5 mb-3  m-2"  style="width: 30rem;">
+		{{ form_start(form , formmethod="post") }}
+
+		{{ form_row(form.date_arrivee) }}
+		{{ form_row(form.date_depart) }}
+
+        {{ form_row(form.prenom) }}
+		{{ form_row(form.nom) }}
+		{{ form_row(form.telephone) }}
+		{{ form_row(form.email) }}
+		
+
+		{# <button  type="submit" class="btn btn-primary" >Réserver à ces dates</button>  #}
+        {{ form_end(form) }}
+	</div>	
+
+</section>
+
+
+
+{% endblock %}

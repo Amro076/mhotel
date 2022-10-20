@@ -3,23 +3,24 @@
 {% block body %}
 
 
-<section class="col-md-4 mx-auto text-center border border-dark mb-3 p-3 mt-3 mr-1>
+<section class="col-md-4 mx-auto w-50 text-center border border-dark mb-3 p-3 mt-3 mr-1">
         
 			
-	<div class="card-body ">
-		<h5 class="card-title">{{ item.titre }}</h5><br>
+	
+	<div class="card bg-dark mt-5 mb-3 f-s-4">
+		<h3 class="card-title text-large">{{ item.titre }}</h3><br>
 					
 					
 			<div class="card text-center" >
                 <div>
-					<img src="{{ item.photo }}" >
+					<img src="{{ asset(item.photo) }} "height="400" width="600" >
                 </div>
 				<p class="card-text">{{ item.descriptioncourte|raw }}</p>
                 <p></p>
                 <div><p>{{ item.descriptionlongue}}</p></div>
                         
 				<p class="card-text">{{ item.prixJour / 100|number_format(2) }}€</p> 
-				<a class="btn btn-primary" href="#">Réservez maintenant</a>
+				<a class="btn btn-success mx-auto" href="{{ path('app_resa', {id: item.id}) }}">Réservez maintenant</a>
 						
 			</div>
 		</div>

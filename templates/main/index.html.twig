@@ -8,30 +8,31 @@
 <div class="container text-center">
     <div class="title">
     <br>
-    <h1><small>Bienvenue dans le</small> M HOTEL</h1><br><br>
-    </div>
-    <div><img src="{{asset('image/accueil-photo.jpg ' )}} " width="700" alt=""></div>   
-</div>
+    <h1 class="text-dark">LES  <img src="{{asset('image/logo.jpg') }}" width="60" height="60"> CHAMBRES  </h1>
 
-<section>
-        <div class="row">
+
+
+       
 		{% for item in chambres %}
-			<div class="col-md-4"><br><br>
-				<div class="card" style="width: 18rem;">
-					<img src="{{ item.photo }}" class="card-img-top">
+			<br><div class="row g-2 text-center "><br><br>
+				<div class="card bg-dark" >
+				<h5 class="card-title">{{ item.titre }}</h5>
+					<img src="{{ item.photo }}" height="400" width="400" class="card-img-top">
 					<div class="card-body">
-						<h5 class="card-title">{{ item.titre }}</h5>
+						
 						<p class="card-text">{{ item.descriptioncourte|raw }}</p>
                         <p></p>
 						<p class="card-text">{{ item.prixJour / 100|number_format(2) }}€</p> 
 					
 					</div>
-                    <a class="btn btn-primary" href="{{ path('app_show', {id: item.id})}}">pour en savoir plus</a>
+                    <a class="btn btn-success mx-auto " href="{{ path('app_show', {id: item.id})}}">pour en savoir plus</a>
 				</div>
-			</div>
+			</div><br>
+			
 		{% endfor %}
-	</div>
-    </section>
+		
+	
+    
 
 
 {% endblock %}

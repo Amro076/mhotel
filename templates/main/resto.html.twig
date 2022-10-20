@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-10 mx-auto col-12 text-center mb-3">
+            <h1 class="mt-0 text-dark">Menu</h1>
+            <p class="lead"></p>
+        </div>
+        <h3 class="text-center text-dark">Petit déjeuner</h3>
+        <div class="d-flex mt-4 text-end">
+
+             <div class="col-4">
+            <img  src="{{ asset('image/restaurant.jpg') }}" width="700" height="400"  alt="">
+            </div>
+        
+            <div class="col-6 ">
+            <img  src="{{ asset('image/menu.jpg') }}" class="m-5"  width="400" height="550" alt="">
+            </div>
+           
+            <hr class="accent my-5">
+        </div>
+        
+        <h3 class="text-center text-dark">déjeuner</h3>
+        <div class="d-flex mt-4 text-end">
+
+             <div class="col-4 ">
+            <img  src="{{ asset('image/menu.jpg') }}" class="m-5"  width="400" height="550" alt="">
+            </div>
+
+             <div class="col-6">
+            <img  src="{{ asset('image/restaurant.jpg') }}" width="700" height="400"  alt="">
+            </div>
+        
+           
+            <hr class="accent my-5">
+        </div>
+        
+        <h3 class="text-center text-dark">Diner</h3>
+        <div class="d-flex mt-4 text-end">
+
+             <div class="col-4">
+            <img  src="{{ asset('image/restaurant.jpg') }}" width="700" height="400"  alt="">
+            </div>
+        
+            <div class="col-6 ">
+            <img  src="{{ asset('image/menu.jpg') }}" class="m-5"  width="400" height="550" alt="">
+            </div>
+           
+            <hr class="accent my-5">
+        
+        </div>
+        
+     
+    
+
+
+
+{% endblock %}
