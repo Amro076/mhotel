@@ -149,7 +149,7 @@ public function resa(Chambre $chambre = null, EntityManagerInterface $manager, R
             ]);
         }
 
-        return $this->render('main/avis.html.twig',[
+        return $this->renderForm('main/avis.html.twig',[
             'form' => $form
         ]);
     }
