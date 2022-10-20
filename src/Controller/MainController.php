@@ -133,7 +133,7 @@ public function resa(Chambre $chambre = null, EntityManagerInterface $manager, R
     }
     
     #[Route('/avis', name: 'avis')]
-    public function avis(EntityManagerInterface $manager, Request $request)
+    public function avis(EntityManagerInterface $manager,AvisRepository $repo, Request $request)
     {   
         $avis = new Avis;
         $form = $this->createForm(AvisType::class, $avis);
@@ -144,15 +144,18 @@ public function resa(Chambre $chambre = null, EntityManagerInterface $manager, R
             $manager->persist($avis);
             $manager->flush();
 
-            return $this->redirectToRoute('home',[
-                'id'=>$avis->getId()
-            ]);
+            $this->addFlash('success', 'Merci pour votre avis !');
+            return $this->redirectToRoute('avis');
         }
-
+        $avis = $repo->findAll();
         return $this->renderForm('main/avis.html.twig',[
-            'form' => $form
+            'form' => $form,
+            'avis' => $avis
         ]);
     }
+
+    
+
 
 
 

@@ -6,6 +6,7 @@ use App\Entity\Avis;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class AvisType extends AbstractType
 {
@@ -19,6 +20,10 @@ class AvisType extends AbstractType
             ->add('email')
             ->add('comment')
         ;
+        $builder->add('Validez', SubmitType::class, [
+            'attr' => ['class' => 'save', 'formmethod'=>"post"
+        ],
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

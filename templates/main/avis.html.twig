@@ -2,7 +2,16 @@
 
 {% block body %}
 
-<div class="card border bg-dark mt-5 mb-3  m-2"  style="width: 30rem;">
+
+<div class="bg-dark text-center mx-auto text-center m-3  " style="width: 300px;">
+<h2 class=""> Donnez un Avis </h2>
+</div>
+<section class="container d-flex">
+<div class=" mt-5 mb-3  m-2">
+    <img src="{{asset('image/accueil.jpg')}}" width="500" height="500" alt="">
+</div>
+
+<div class="card border text-center bg-dark mt-5 mb-3  m-2"  style="width: 700px" >
 		{{ form_start(form) }}
 
 		
@@ -14,9 +23,29 @@
         {{ form_row(form.comment)}}
 		
 
-		<button  type="submit" class="btn btn-primary" >Envoyer</button> 
+		{# <button  type="submit" class="btn btn-primary" >Envoyer</button>  #}
         {{ form_end(form) }}
-	</div>	
+	</div>
+
+</section>
+
+<div class="container text-white bg-dark m-2">
+<H2>Témoignages</H2>
+
+{% for item in avis %}
+<div class=" w-50">
+ <p>C'est la témoignage de: {{ item.nom }} {{ item.prenom }}</p>
+</div>
+<div>
+<p class="text-center"> Avis : {{item.comment}}</p>
+</div>
+ <hr>   
+{% endfor %}
+
+
+</div>
+
+
 
 
 {% endblock %}

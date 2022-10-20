@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Avis;
 use App\Entity\Membre;
 use App\Entity\Slider;
 use App\Entity\Chambre;
@@ -41,6 +42,8 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Commande', 'fas fa-user', Commande::class),
             MenuItem::section('Slider'),
             MenuItem::linkToCrud('slider', 'fa fa phpto', Slider::class  ),
+            MenuItem::section('Avis'),
+            MenuItem::linkToCrud('avis', 'fa fa phpto', Avis::class),
             MenuItem::linkToRoute('Menu_prancipale', 'fas fa-home', 'app_main')
         ];  
     }
