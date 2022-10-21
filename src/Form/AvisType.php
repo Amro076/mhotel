@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Avis;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -18,12 +19,12 @@ class AvisType extends AbstractType
             ->add('nom')
             ->add('telephone')
             ->add('email')
-            ->add('comment')
-        ;
-        $builder->add('Validez', SubmitType::class, [
-            'attr' => ['class' => 'save', 'formmethod'=>"post"
-        ],
-        ]);
+            ->add('comment');
+        
+        // $builder->add('Validez', SubmitType::class, [
+        //     'attr' => ['class' => 'save', 'formmethod'=>"post"
+        // ],
+        // ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

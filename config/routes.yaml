@@ -1,3 +1,8 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+# avis:
+#     path: /avis
+#     controller: App\Controller\MainController::avis
+#     requirements:
+#       _method: POST

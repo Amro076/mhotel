@@ -2,34 +2,54 @@
 
 {% block body %}
 
-
-<div class="bg-dark text-center mx-auto text-center m-3  " style="width: 300px;">
+<br>
+<div class="bg-dark text-center mx-auto text-center m-4  " style="width: 300px;">
 <h2 class=""> Donnez un Avis </h2>
 </div>
 <section class="container d-flex">
-<div class=" mt-5 mb-3  m-2">
+<div class=" mt-5 mb-3  m-4">
     <img src="{{asset('image/accueil.jpg')}}" width="500" height="500" alt="">
 </div>
 
-<div class="card border text-center bg-dark mt-5 mb-3  m-2"  style="width: 700px" >
+<div class=" card border text-center bg-dark mt-5 mb-3  m-2"  style="width: 750px" >
 		{{ form_start(form) }}
+       
 
+        {{ form_row(form.prenom ,  { 
+            label:"Prénom",
+            attr: {
+                placeholder: "Prénom"}}) }}
+		{{ form_row(form.nom ,  { 
+            label:"Nom",
+            attr: {
+                placeholder: "Nom"}}) }}
+		{{ form_row(form.telephone,  { 
+            label:"Télephone",
+            attr: {
+                placeholder: "Télephone"}}) }}
+		{{ form_row(form.email,  { 
+            label:"Email",
+            attr: {
+                placeholder: "Email"}}) }}
+
+        {{ form_row(form.comment, { 
+            label:"Témoignage",
+            attr: {
+                placeholder: "Donner un avis"
+
+            }
+        }
+        
+        )}}
 		
 
-        {{ form_row(form.prenom) }}
-		{{ form_row(form.nom) }}
-		{{ form_row(form.telephone) }}
-		{{ form_row(form.email) }}
-        {{ form_row(form.comment)}}
-		
-
-		{# <button  type="submit" class="btn btn-primary" >Envoyer</button>  #}
+		<button  type="submit" class="btn btn-primary" >Envoyer</button> 
         {{ form_end(form) }}
 	</div>
 
-</section>
+</section >
 
-<div class="container text-white bg-dark m-2">
+<div class="container text-white mx-auto bg-dark m-2">
 <H2>Témoignages</H2>
 
 {% for item in avis %}

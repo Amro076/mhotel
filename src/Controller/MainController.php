@@ -73,7 +73,7 @@ public function resa(Chambre $chambre = null, EntityManagerInterface $manager, R
         $manager->persist($commande);
         $manager->flush();
         
-        $this->addFlash('success', 'Votre commande a bien été enregistrée !');
+        $this->addFlash('success', 'Votre réservation a bien été enregistrée !');
         return $this->redirectToRoute('app_main');
         
     }
