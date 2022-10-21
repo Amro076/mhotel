@@ -19,7 +19,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MainController extends AbstractController
 {
-    #[Route('/', name: 'app_main')]
+    #[Route('/index', name: 'app_main')]
     public function index(ChambreRepository $repo): Response
     {
         $chambres = $repo->findAll();
@@ -27,13 +27,14 @@ class MainController extends AbstractController
             'chambres' => $chambres,
         ]);
     }
-
-    // #[Route('/home', name: 'home')]
-    // public function home()
-    // {
-      
-    //     return $this->render('main/home.html.twig');
-    // }
+    #[Route('/', name: 'home')]
+    public function carou( SliderRepository $repo)
+    {
+        $sliders = $repo->findAll();
+        return $this->render('main/home.html.twig', [
+            'photos' => $sliders
+        ]);
+    }
 
 
     #[Route('/main/show/{id}', name: 'app_show')]
@@ -116,14 +117,7 @@ public function resa(Chambre $chambre = null, EntityManagerInterface $manager, R
         ]);
     }
 
-    #[Route('/home', name: 'home')]
-    public function carou( SliderRepository $repo)
-    {
-        $sliders = $repo->findAll();
-        return $this->render('main/home.html.twig', [
-            'photos' => $sliders
-        ]);
-    }
+    
 
     #[Route('/histo', name: 'histo')]
     public function histo()

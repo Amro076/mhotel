@@ -1,11 +1,14 @@
 body{
 
-    /* background:#e4e1f0; */
+   
     background-image: url(/image/rm309-adj-01.jpg);
    background-size: 100%;
 
 }
 img{
     opacity: 0.7;
+}
+footer{
+    width: 100%;
 }
 
