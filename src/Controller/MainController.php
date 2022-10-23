@@ -116,6 +116,17 @@ public function resa(Chambre $chambre = null, EntityManagerInterface $manager, R
             
         ]);
     }
+    #[Route('/main/lien', name: 'lien')]
+    public function lien()
+    {
+        
+
+        return $this->render("main/lien.html.twig", [
+            
+        ]);
+    }
+ 
+
 
     
 
@@ -147,6 +158,15 @@ public function resa(Chambre $chambre = null, EntityManagerInterface $manager, R
             'avis' => $avis
         ]);
     }
+    #[Route('/news', name:'news')]
+    public function news()
+    {
+        $this->addFlash('success', 'Vous étes inscrit! ');
+        return $this->redirectToRoute('home');
+    }
+
+    
+
 
     
 

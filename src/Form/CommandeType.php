@@ -36,10 +36,10 @@ class CommandeType extends AbstractType
             //->add('createdAt')
             //->add('chambre')
         ;
-        $builder->add('Reserver', SubmitType::class, [
-            'attr' => ['class' => 'save', 'formmethod'=>"post"
-        ],
-        ]);
+        // $builder->add('Reserver', SubmitType::class, [
+        //     'attr' => ['class' => 'save', 'formmethod'=>"post"
+        // ],
+        // ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

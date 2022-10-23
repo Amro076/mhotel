@@ -46,22 +46,30 @@
 		<button  type="submit" class="btn btn-primary" >Envoyer</button> 
         {{ form_end(form) }}
 	</div>
+    </section ><br>
+    
 
-</section >
 
-<div class="container text-white mx-auto bg-dark m-2">
-<H2>Témoignages</H2>
+
+<div class="container text-white mx-auto  m-2">
+<H2 class="text-center text-dark">Témoignages</H2><br>
 
 {% for item in avis %}
-<div class=" w-50">
+<div class="bg-dark row justify-content-md-center ">
+<div class=" w-50 m-1  ">
  <p>C'est la témoignage de: {{ item.nom }} {{ item.prenom }}</p>
 </div>
 <div>
 <p class="text-center"> Avis : {{item.comment}}</p>
 </div>
- <hr>   
+</div>
+ <hr>
+    
 {% endfor %}
 </div>
+<br>
+
+
 
 
 
